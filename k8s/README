@@ -1,0 +1,4 @@
+# Secret 설정
+
+kubectl create secret generic discord-secret \
+  --from-literal=webhook_url=(웹 훅 URL)

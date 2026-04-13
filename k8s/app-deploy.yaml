@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stockguard-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stockguard
+  template:
+    metadata:
+      labels:
+        app: stockguard
+    spec:
+      containers:
+        - name: app
+          image: junho123/stockguard:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: webhook_url
+              valueFrom:
+                secretKeyRef:
+                  name: discord-secret
+                  key: webhook_url
