@@ -11,6 +11,12 @@ grafana:
     passwordKey: admin-password
   persistence:
     enabled: false
+  additionalDataSources:
+    - name: Prometheus
+      type: prometheus
+      access: proxy
+      url: http://monitoring-kube-prometheus-prometheus.monitoring:9090
+      isDefault: true
 
 prometheus:
   prometheusSpec:
