@@ -14,12 +14,14 @@ spec:
     spec:
       containers:
         - name: app
-          image: junho123/stockguard:latest
+          image: junho010712/stockguard:latest
           ports:
-            - containerPort: 8080
+            - containerPort: 80
           env:
             - name: webhook_url
               valueFrom:
                 secretKeyRef:
                   name: discord-secret
                   key: webhook_url
+            - name: REDIS_HOST
+              value: redis

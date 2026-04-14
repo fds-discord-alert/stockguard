@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: stockguard
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  source:
+    repoURL: https://github.com/fds-discord-alert/stockguard.git
+    targetRevision: main
+    path: k8s
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
