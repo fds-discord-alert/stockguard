@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  # Redis 서비스
+  redis:
+    image: redis:alpine
+    container_name: stockguard-redis
+    ports:
+      - "6379:6379"
+
+  # FastAPI 서비스
+  app:
+    build: .
+    container_name: fds-backend
+    ports:
+      - "8000:80"
+    environment:
+      - REDIS_HOST=redis
+    # .env 파일에 정의된 변수들을 컨테이너 환경변수로 로드합니다.
+    env_file:
+      - .env
+    depends_on:
+      - redis
