@@ -33,3 +33,13 @@ coverage.xml
 
 # Env files
 .env
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+crash.log
+crash.*.log
+
+Junho.pem

@@ -33,3 +33,4 @@ bash k8s/scripts/create-discord-secret.sh "<DISCORD_WEBHOOK_URL>" [namespace]
 - redis: Redis 배포 리소스
 - argocd: GitOps 자동화
 - scripts: 운영 편의 스크립트
+- terraform: 인프라 코드 (k8s/ 밖으로 분리됨)
