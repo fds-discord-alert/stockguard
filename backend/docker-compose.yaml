@@ -16,5 +16,8 @@ services:
       - "8000:80"
     environment:
       - REDIS_HOST=redis
+    # .env 파일에 정의된 변수들을 컨테이너 환경변수로 로드합니다.
+    env_file:
+      - .env
     depends_on:
       - redis
