@@ -1,4 +1,35 @@
-venv/
+# Python
 __pycache__/
-.env
+*.py[cod]
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Testing
+.pytest_cache/
+.coverage
+coverage.xml
+
+# Tools
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+
+# OS / IDE
 .DS_Store
+.idea/
+.vscode/
+
+# Env files
+.env
